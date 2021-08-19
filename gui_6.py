@@ -1,0 +1,27 @@
+import tkinter
+form=tkinter.Tk()
+l1=tkinter.Label(text="First Number")
+l1.grid(row="0")
+l2=tkinter.Label(text="Second Number")
+l2.grid(row="1")
+l3=tkinter.Label(text="output")
+l3.grid(row="2")
+v1=tkinter.Entry()
+v1.grid(row="0",column="1")
+v2=tkinter.Entry()
+v2.grid(row="1",column="1")
+v3=tkinter.Entry()
+v3.grid(row="2",column="1")
+def result():
+    
+    a=int(v1.get())
+    b=int(v2.get())
+    c=a+b
+    #c=str(val.get())
+    v3.insert(0,str(c))
+cmd=tkinter.Button(text="submit",command=result)
+cmd.grid(row="3",column="1")
+val=tkinter.IntVar()
+s=tkinter.Scale(form,variable=val)
+s.grid(row=4)
+form.mainloop()

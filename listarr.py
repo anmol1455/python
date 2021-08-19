@@ -1,0 +1,10 @@
+l=[1,2,[3,4,5]]
+a=len(l)
+c=l[a//2]
+print(c)
+b=len(l[2])
+print(b)
+d=l[2][b//2]
+print(d)
+li=[c,d]
+print(li)

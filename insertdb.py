@@ -1,0 +1,41 @@
+import tkinter
+from tkinter import messagebox
+import mysql.connector as db
+myform=tkinter.Tk(className="Database")
+roll=tkinter.Label(text='Roll Number')
+name=tkinter.Label(text='Name')
+roll.grid(row=1)
+name.grid(row=2)
+rno=tkinter.Entry()
+nme=tkinter.Entry()
+box=tkinter.Text()
+rno.grid(row=1,column=1)
+nme.grid(row=2,column=1)
+box.grid(row=3,column=1)
+def conn():
+    mydb=db.connect(host='localhost',user='root',passwd='',database='mydata')
+    cur=mydb.cursor()
+    rollno=rno.get()
+    name=nme.get()
+    sql="insert into student(rollno,name)values(%s,%s)"
+    val=(rollno,name)
+    cur.execute(sql,val)
+    mydb.commit()
+    messagebox.showinfo("output",("inserted into database"))
+def show():
+    mydb=db.connect(host='localhost',user='root',passwd='',database='mydata')
+    cur=mydb.cursor()
+    rollno=rno.get()
+    #name=nme.get()
+    sql="select * from student"
+    #val=(rollno,name)
+    cur.execute(sql)
+    result=cur.fetchall()
+    box.insert('1.0',result)
+    mydb.commit()
+    messagebox.showinfo("output",("fetched database"))    
+save=tkinter.Button(text='insert',command=conn)
+show=tkinter.Button(text='show',command=show)
+save.grid(row=4,column=1)
+show.grid(row=4,column=2)
+myform.mainloop()

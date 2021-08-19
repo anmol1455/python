@@ -1,0 +1,8 @@
+filename=open("user.txt","w")
+user=input("enter user name")
+passwd=input("enter passward")
+filename.write(user)
+filename.write("\n")
+filename.write(passwd)
+print("operation successful")
+filename.close()

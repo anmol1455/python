@@ -1,0 +1,19 @@
+import mysql.connector
+conn=mysql.connector.connect(host="localhost",user="jarvis",passwd="1408",database="user_passward")
+cur=conn.cursor()
+#cur.execute("create database user_passward")
+#cur.execute("create table detail(user varchar(100)not null,passward varchar(100)not null)")
+#print(cur.rowcount,"table created");
+username=input("enter your username")
+passwd=input("enter your passward")
+cur.execute("insert into detail(user,passward)values('%s','%s')"%(username,passwd))
+conn.commit()
+print(cur.rowcount,"data inserted")
+
+
+
+
+
+#cur.execute("show tables");
+#for x in cur:
+#    print(x)

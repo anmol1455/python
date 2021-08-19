@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+'''sales=np.array([10,20,30,40,50])
+city=np.array(["vns","gzp","allb","ddun","mrt"])
+fig=plt.figure()
+ax=fig.add_axes([0.1,0.1,0.5,0.5])
+ax.pie(sales,labels=city,autopct="%1.3f%%")
+ax.set_title("sales report")'''
+'''sales=np.array([[10,20,30,40],[50,60,70,80],[90,100,110,120]])
+city=np.array([1,2,3,4])
+fig=plt.figure()
+ax=fig.add_axes([0.1,0.1,0.5,0.5])
+ax.bar(city+.00,sales[0],color="orange",width=.25)
+ax.bar(city+.25,sales[1],color="green",width=.25)
+ax.bar(city+.50,sales[2],color="red",width=.25)
+ax.legend(['mouse','cpu','monitor'])
+ax.set_title("sales")
+ax.set_yticks(np.arange(10,100,10))'''
+course=np.array(['c','c++','python','java'])
+girl=np.array([50,30,40,20])
+boy=np.array([30,40,50,45])
+fig=plt.figure()
+ax=fig.add_axes([0.1,0.1,0.5,0.5])
+ax.bar(course,girl,color="red",width=.25)
+ax.bar(course,girl,color="green",bottom=girl,width=.25)
+ax.legend(['girls','boys'])
+plt.show()
